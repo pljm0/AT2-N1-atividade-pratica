@@ -15,13 +15,13 @@ public class Funcionario implements Runnable {
     public void run() {
         double salario = 1400.0;
         loja.pagarSalarios();
-        contaSalario.creditar(salario); // Crédito na conta de salário
+        contaSalario.creditar(salario);
         double valorInvestimento = salario * 0.20;
-        contaInvestimento.creditar(valorInvestimento); // Crédito na conta de investimento
+        contaInvestimento.creditar(valorInvestimento);
+        contaSalario.debitar(valorInvestimento);
         System.out.println(nome + " recebeu o salário e investiu R$" + valorInvestimento);
     }
 
-    // Getters para as contas
     public Conta getContaSalario() {
         return contaSalario;
     }
